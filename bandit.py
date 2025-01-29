@@ -6,6 +6,7 @@ import random
 
 EPS = 10E-12
 
+# the following code 
 
 class Bandit:
     """
