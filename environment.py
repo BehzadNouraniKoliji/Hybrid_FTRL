@@ -23,6 +23,11 @@ class Environment:
     def play(self, action, time_step):
         del time_step # unused in i.i.d.
         feedback = [-1.0 if random.random() > self.mean_losses[i] else 1.0 for i in action]
+        
+        #print(f"Action: {action}")
+        #print(f"Mean Losses: {self.mean_losses[action]}")
+        #print(f"Baseline: {self.baseline}")
+
         regret = (self.mean_losses[action] - 0.5).sum() - self.baseline
         return feedback, regret
 
